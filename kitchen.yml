@@ -5,6 +5,7 @@ driver:
 
 provisioner:
   name: dokken
+  policyfile: haproxy_lb_policy.rb
 
 transport:
   name: dokken
@@ -21,11 +22,6 @@ platforms:
       pid_one_command: /bin/systemd
       intermediate_instructions:
         - RUN /usr/bin/apt-get update
-
-  - name: centos-8
-    driver:
-      image: dokken/centos-8
-      pid_one_command: /usr/lib/systemd/systemd
 
 suites:
   - name: default
