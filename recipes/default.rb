@@ -18,7 +18,7 @@ web_node_objects = search('node', "policy_name:tomcat AND policy_group:#{node['p
 web_servers = []
 
 web_node_objects.each do |one_node|
-  server = "#{one_node['cloud']['public_hostname']} #{one_node['cloud']['public_ipv4']}:80 check"
+  server = "#{one_node['cloud']['public_hostname']} #{one_node['cloud']['public_ipv4']}:8080 check"
   web_servers.push(server)
 end
 
